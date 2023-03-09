@@ -5,36 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
- <script>
-            function resizeIframe(obj) {
-              obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-            }
-
-            window.addEventListener('message', event => {
-    // IMPORTANT: check the origin of the data!
-    if (event.origin === 'https://your-first-site.example') {
-        // The data was sent from your site.
-        // Data sent with postMessage is stored in event.data:
-        console.log(event.data);
-    } else {
-        // The data was NOT sent from your site!
-        // Be careful! Do not use it. This else branch is
-        // here just for clarity, you usually shouldn't need it.
-        return;
-    }
-});
-          </script>
+ 
 </head>
 <body>
     
-    
-    <iframe src="https://neo013.000webhostapp.com/#neo"  frameborder="0" scrolling="no" onload="resizeIframe(this)">
+   <iframe src="https://chat.openai.com/chat"  frameborder="0"  height="1000px" width="100%">
         <p>Your browser does not support iframes.</p>
       </iframe>
-
-      <iframe src="https://neo013.000webhostapp.com/#neo" sandbox="allow-same-origin"
-      onload="this.style.height=(this.contentWindow.document.body.scrollHeight+20)+'px';">
-</iframe>
 
 
 
