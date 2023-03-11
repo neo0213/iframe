@@ -13,7 +13,22 @@
     
     <iframe src="https://ryand111.sg-host.com/" width="100%"  height="1500px" frameborder="0" id="myIframe"></iframe>
     
-    
+    <script>
+                // Add an event listener to listen for messages from the parent website
+        window.addEventListener('message', function(event) {
+          // Check that the message is coming from the expected domain
+          if (event.origin === 'https://ryand111.sg-host.com/') {
+            // If the message is a request for the height of the content, send the height back to the parent website
+            if (event.data === 'get-height') {
+              var contentHeight = document.body.scrollHeight;
+              window.parent.postMessage({
+                height: contentHeight
+              }, 'https://ryand111.sg-host.com/');
+            }
+          }
+        });
+
+    </script>
 
 </body>
 </html>
