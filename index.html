@@ -10,29 +10,10 @@
     </style>
 </head>
 <body>
-    <iframe src="https://ryand111.sg-host.com/#menu-list" width="100%" frameborder="0" scrolling="no"></iframe>
-    <iframe src="https://ryand111.sg-host.com/#menu-order" width="100%" frameborder="0" scrolling="no" id="myIframe"></iframe>
-    
-    <script>
-            // Get a reference to the iframe element
-    window.addEventListener('message', function(event) {
-  // Check the origin of the message
-  if (event.origin == 'https://ryand111.sg-host.com/') {
-    // If the origin is not trusted, ignore the message
-    console.log(event.data)
-  // Set the height of the iframe to match the height of the content
-  var iframe = document.getElementById('myIframe');
-  iframe.style.height = event.data.height + 'px';
-  }
    
-       else {
-       console.log("error");
-       }
-});
+    <iframe src="https://ryand111.sg-host.com/#menu-order" width="100%" height="1500px" frameborder="0"></iframe>
+    
 
-
-
-    </script>
 
 </body>
 </html>
