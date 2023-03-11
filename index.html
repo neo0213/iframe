@@ -14,17 +14,23 @@
     <iframe src="https://ryand111.sg-host.com/" width="100%" frameborder="0" scrolling="no" id="myIframe"></iframe>
     
     <script>
-        // Get a reference to the iframe element
-        var iframe = document.getElementById('myIframe');
+            // Get a reference to the iframe element
+    var iframe = document.getElementById('myIframe');
 
-        // Add an event listener to listen for messages from the main domain
-        window.addEventListener('message', function(event) {
-          // Check that the message is coming from the expected domain
-          if (event.origin === 'https://ryand111.sg-host.com/') {
-            // Set the height of the iframe to match the height of the content
-            iframe.style.height = event.data.height + 'px';
-          }
-        });
+    // Add an onload event listener to the iframe
+    iframe.onload = function() {
+      // Get the height of the content
+      var contentHeight = iframe.contentWindow.document.body.scrollHeight;
+
+      // Send the height of the content to the main domain
+      window.parent.postMessage({
+        height: contentHeight
+      }, 'https://www.main-domain.com');
+
+      // Set the height of the iframe to match the height of the content
+      iframe.style.height = contentHeight + 'px';
+    };
+
 
 
     </script>
