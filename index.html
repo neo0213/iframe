@@ -17,14 +17,17 @@
             // Get a reference to the iframe element
     window.addEventListener('message', function(event) {
   // Check the origin of the message
-  if (event.origin !== 'https://ryand111.sg-host.com/') {
+  if (event.origin == 'https://ryand111.sg-host.com/') {
     // If the origin is not trusted, ignore the message
-    return;
-  }
     console.log(event.data)
   // Set the height of the iframe to match the height of the content
   var iframe = document.getElementById('myIframe');
   iframe.style.height = event.data.height + 'px';
+  }
+   
+       else {
+       console.log("error");
+       }
 });
 
 
