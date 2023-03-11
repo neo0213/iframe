@@ -7,7 +7,7 @@
     <title>Document</title>
 </head>
 <body>
-    <iframe src="https://ryand111.sg-host.com" width="100%" frameborder="0" scrolling="no" id="myIframe"></iframe>
+    <iframe src="https://ryand111.sg-host.com/" width="100%" frameborder="0" scrolling="no" id="myIframe"></iframe>
     
     
     <script>
@@ -21,7 +21,7 @@
         
         window.addEventListener('message', event => {
                 // IMPORTANT: check the origin of the data!
-                if (event.origin === 'https://ryand111.sg-host.com') {
+                if (event.origin === 'https://ryand111.sg-host.com/') {
                     // The data was sent from your site.
                     // Data sent with postMessage is stored in event.data:
                     console.log(event.data);
@@ -29,7 +29,7 @@
                     // The data was NOT sent from your site!
                     // Be careful! Do not use it. This else branch is
                     // here just for clarity, you usually shouldn't need it.
-                    return;
+                    consolo.log("error");
                 }
             });
         </script>
