@@ -21,7 +21,7 @@
     // If the origin is not trusted, ignore the message
     return;
   }
-
+    console.log(event.data)
   // Set the height of the iframe to match the height of the content
   var iframe = document.getElementById('myIframe');
   iframe.style.height = event.data.height + 'px';
